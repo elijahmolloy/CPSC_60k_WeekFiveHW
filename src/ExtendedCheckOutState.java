@@ -1,8 +1,8 @@
-public class CheckedOutState implements State {
+public class ExtendedCheckOutState implements State {
 
     LibraryBook libraryBook;
 
-    public CheckedOutState(LibraryBook libraryBook) {
+    public ExtendedCheckOutState(LibraryBook libraryBook) {
         this.libraryBook = libraryBook;
     }
 
@@ -20,9 +20,7 @@ public class CheckedOutState implements State {
 
     @Override
     public void ExtendCheckOut() {
-        System.out.println("Thank you, " + libraryBook.getTitle() + "'s due date is now Extended.");
-
-        libraryBook.setState(libraryBook.getExtendedState());
+        System.out.println("Whoops! " + libraryBook.getTitle() + " has already been extended.");
     }
 
     @Override
@@ -39,6 +37,6 @@ public class CheckedOutState implements State {
 
     @Override
     public String toString() {
-        return "Book is currently Checked Out (and waiting to be Checked In)";
+        return "Book is currently Checked Out (and has been for some time now)";
     }
 }

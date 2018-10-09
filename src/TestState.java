@@ -1,24 +1,20 @@
 public class TestState {
 
-    // Main
     public static void main(String[] args) {
-        LibraryBookContext context = new LibraryBookContext();
 
-        State checkedIn = new CheckedInState();
-        State checkedOut = new CheckedOutState();
-        State lost = new LostState();
-        State reserved = new ReservedState();
+        LibraryBook warAndPeace = new LibraryBook("War and Peace", "Leo Tolstoy");
 
-        context.setState(checkedIn);
-        context.doAction();
+        System.out.println(warAndPeace.toString());
 
-        context.setState(checkedOut);
-        context.doAction();
+        warAndPeace.checkOutBook();
+        warAndPeace.checkOutBook();
+        warAndPeace.extendCheckOut();
+        warAndPeace.extendCheckOut();
+        warAndPeace.checkInBook();
+        warAndPeace.checkOutBook();
+        warAndPeace.loseBook();
+        warAndPeace.findBook();
 
-        context.setState(lost);
-        context.doAction();
-
-        context.setState(reserved);
-        context.doAction();
+        System.out.println(warAndPeace.toString());
     }
 }

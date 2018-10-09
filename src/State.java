@@ -1,3 +1,7 @@
 public interface State {
-    void doAction();
+    void CheckOutBook();
+    void CheckInBook();
+    void ExtendCheckOut();
+    void LoseBook();
+    void FindBook();
 }
